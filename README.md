@@ -7,6 +7,19 @@ Official reference: `https://towerhillrocks.wixsite.com/tower-hill/info`
 
 ---
 
+## 🌐 Live Hosted Demo (GitHub Pages)
+
+👉 **[https://reiuiji.github.io/towerhill_demo/](https://reiuiji.github.io/towerhill_demo/)**
+
+### Direct Links for Testing on Phones:
+- 🎸 **[Style A: Midnight Stage Rock](https://reiuiji.github.io/towerhill_demo/prototype-stage-rock.html)**
+- 🍺 **[Style B: South Shore Pub (Senior & Tech-Illiterate Friendly)](https://reiuiji.github.io/towerhill_demo/prototype-pub-friendly.html)**
+- ⚡ **[Style C: Live Gig Hub (Shows First)](https://reiuiji.github.io/towerhill_demo/prototype-gig-hub.html)**
+- 🏁 **[Style D: Modern Monochrome Clean](https://reiuiji.github.io/towerhill_demo/prototype-monochrome.html)**
+- 📱 **[4-in-1 Mobile Showcase](https://reiuiji.github.io/towerhill_demo/all-phones-showcase.html)**
+
+---
+
 ## 🚀 Running the Prototype Locally
 
 Start a local static server from the project directory:
@@ -70,3 +83,4 @@ Share these direct URLs with band members or family to test directly on their ph
    - Embedded post cards and a live show photo gallery with zoom lightbox.
 7. **Mobile Sticky Action Bar**:
    - Fixed bottom action bar on mobile viewports for 1-tap access to *Call Bob*, *Next Show*, and *Listen*.
+
