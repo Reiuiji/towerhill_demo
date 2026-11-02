@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower Hill - Modern Monochrome Prototype (Platinum Black & White)</title>
+  <meta name="description" content="Monochrome Clean Style: Crisp platinum black & white aesthetic matching the band emblem.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/themes.css">
+</head>
+<body class="standalone-mode theme-monochrome-clean">
+
+  <!-- Discreet Floating Prototype Switcher for Phone & Mobile Testers -->
+  <aside class="standalone-floating-badge" aria-label="Prototype Switcher">
+    <a href="index.html">← Device Simulator & Split Compare</a>
+    <div class="standalone-switcher">
+      <a href="prototype-stage-rock.html" class="">🎸 Rock</a>
+      <a href="prototype-pub-friendly.html" class="">🍺 Pub</a>
+      <a href="prototype-gig-hub.html" class="">⚡ Gig Hub</a>
+      <a href="prototype-monochrome.html" class="active">🏁 Mono</a>
+    </div>
+  </aside>
+
+  <!-- Site Content -->
+  <div class="site-viewport theme-monochrome-clean" id="siteContainer">
+
+
+        <!-- ==================================================================
+             TOP BAR (Schedule on Left, B&W Logo in Middle, Menu on Right)
+             ================================================================== -->
+        <nav class="band-nav-bar" id="bandTopBar" aria-label="Main Navigation">
+          <!-- Left: Schedule / Tour Quick Button -->
+          <div class="nav-schedule-action">
+            <button class="nav-schedule-btn" id="navScheduleBtn" aria-label="Jump to Upcoming Shows">
+              <span>🗓️ Shows</span>
+              <span class="btn-badge">Nov 14</span>
+            </button>
+          </div>
+
+          <!-- Middle: Genuine Black & White Band Logo -->
+          <div class="nav-logo-showcase" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Tower Hill Home">
+            <img src="assets/band_logo_bw.jpg" alt="Tower Hill Band Black and White Logo" class="nav-logo-img">
+          </div>
+
+          <!-- Right: Menu Button with Icon AND Clear Text -->
+          <div class="nav-menu-action">
+            <button class="nav-menu-btn" id="bandMenuToggleBtn" aria-expanded="false" aria-controls="dropdownMenuOverlay" aria-label="Open Site Menu">
+              <span class="menu-icon-bars">☰</span>
+              <span class="menu-label-text">MENU</span>
+            </button>
+          </div>
+
+          <!-- ================================================================
+               SLIDE-DOWN OVERLAY MENU (Tech-Illiterate Friendly: Big Tap Targets)
+               ================================================================ -->
+          <div class="dropdown-menu-overlay" id="dropdownMenuOverlay" role="dialog" aria-modal="true" aria-label="Band Menu">
+            <div class="overlay-header-note">
+              <span>📍 Quick Navigation (Tap any section)</span>
+              <button class="overlay-close-btn" id="menuCloseBtn" aria-label="Close Menu">✕ Close</button>
+            </div>
+
+            <div class="overlay-links-grid">
+              <!-- Shows -->
+              <a href="#shows" class="overlay-link-card">
+                <div class="overlay-link-icon">📅</div>
+                <div class="overlay-link-text">
+                  <h3>Upcoming Shows & Tour</h3>
+                  <p>Next: Sat Nov 14 at The C-Note (Hull, MA)</p>
+                </div>
+              </a>
+
+              <!-- Music -->
+              <a href="#music" class="overlay-link-card">
+                <div class="overlay-link-icon">🎵</div>
+                <div class="overlay-link-text">
+                  <h3>Listen to Music</h3>
+                  <p>Rock & pop hit covers from Elvis to Katy Perry</p>
+                </div>
+              </a>
+
+              <!-- Meet the Band -->
+              <a href="#band" class="overlay-link-card">
+                <div class="overlay-link-icon">🎸</div>
+                <div class="overlay-link-text">
+                  <h3>Meet the Band</h3>
+                  <p>Caroline, Bob, Jay & Stormy</p>
+                </div>
+              </a>
+
+              <!-- Social Feeds & Photos -->
+              <a href="#social" class="overlay-link-card">
+                <div class="overlay-link-icon">📱</div>
+                <div class="overlay-link-text">
+                  <h3>Facebook & Instagram</h3>
+                  <p>Live photos, videos and fan posts</p>
+                </div>
+              </a>
+
+              <!-- Contact & Bob -->
+              <a href="#contact" class="overlay-link-card">
+                <div class="overlay-link-icon">📞</div>
+                <div class="overlay-link-text">
+                  <h3>Book the Band / Contact Bob</h3>
+                  <p>Call Bob Fallon: (508) 326-4460</p>
+                </div>
+              </a>
+
+              <!-- Mailing List -->
+              <a href="#newsletter" class="overlay-link-card">
+                <div class="overlay-link-icon">📬</div>
+                <div class="overlay-link-text">
+                  <h3>VIP Gig Alerts</h3>
+                  <p>Join the South Shore rock fan club</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Fast Direct Dial Banner for Bob Fallon inside menu -->
+            <div class="overlay-quick-contact">
+              <div class="quick-contact-info">
+                <div class="quick-contact-icon">📞</div>
+                <div class="quick-contact-text">
+                  <h4>Want to book Tower Hill for your venue or party?</h4>
+                  <p>Speak directly with Bob Fallon: (508) 326-4460</p>
+                </div>
+              </div>
+              <a href="tel:5083264460" class="quick-dial-btn">
+                <span>📞 Call Bob Now</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- ==================================================================
+             HERO SECTION (Real Live Band Photo & Immediate CTA)
+             ================================================================== -->
+        <section class="hero-section" id="home">
+          <div class="hero-image-wrap">
+            <img src="assets/band_hero_real.jpg" alt="Tower Hill Rock Band Live Performance on Stage" class="hero-banner-img">
+            <div class="hero-gradient-overlay"></div>
+          </div>
+
+          <div class="hero-content">
+            <span class="hero-tag">Brockton & South Shore Massachusetts</span>
+            <h2 class="hero-title">Tower Hill</h2>
+            <p class="hero-subtitle">
+              A fun and dynamic pop and rock cover band playing your favorite danceable hits spanning the entire history of Rock 'n' Roll!
+            </p>
+            <div class="hero-cta-group">
+              <a href="#shows" class="btn-primary">
+                <span>📅 See Upcoming Shows</span>
+              </a>
+              <a href="#contact" class="btn-secondary">
+                <span>📞 Book Band / Call Bob</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             "NEXT SHOW" FAST RIBBON (Tech-Illiterate Friendly: Front & Center)
+             ================================================================== -->
+        <aside class="next-gig-ribbon" aria-label="Next Upcoming Performance">
+          <div class="ribbon-info">
+            <span class="ribbon-badge">NEXT SHOW</span>
+            <div class="ribbon-details">
+              <h4>Saturday, Nov 14 • 8:30 PM</h4>
+              <p>The C-Note • 159 Nantasket Ave, Hull, MA (South Shore Rock Night)</p>
+            </div>
+          </div>
+          <div class="ribbon-actions">
+            <a href="https://maps.google.com/?q=The+C-Note+Hull+MA" target="_blank" rel="noopener" class="btn-compact btn-secondary">
+              <span>📍 Directions</span>
+            </a>
+            <button class="btn-compact btn-primary" data-cal-export data-event-title="The C-Note" data-event-venue="The C-Note, Hull, MA" data-event-date="20261114T203000">
+              <span>📅 Add to Phone</span>
+            </button>
+          </div>
+        </aside>
+
+        <!-- ==================================================================
+             SECTION 1: EVENT LIST (Instead of Clumsy Google Calendar)
+             ================================================================== -->
+        <section class="content-section" id="shows">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Where to Catch Us Live</span>
+            <h2 class="section-title">Upcoming Show Schedule</h2>
+            <p class="section-desc">
+              Clear list of upcoming dates around the South Shore and Greater Boston. Tap "Add to Calendar" or "Directions" for instant maps.
+            </p>
+          </div>
+
+          <!-- Quick Filters -->
+          <div class="event-filter-bar">
+            <button class="event-filter-btn active" data-filter="all">All Dates</button>
+            <button class="event-filter-btn" data-filter="public">Public Tavern & Pub Shows</button>
+            <button class="event-filter-btn" data-filter="private">Private Functions</button>
+          </div>
+
+          <!-- Event Cards List -->
+          <div class="events-list-container" id="eventsList">
+            <!-- Event 1 -->
+            <article class="event-card featured-gig" data-type="public">
+              <div class="event-date-badge">
+                <span class="event-date-month">NOV</span>
+                <span class="event-date-day">14</span>
+                <span class="event-date-weekday">SATURDAY</span>
+              </div>
+              <div class="event-info">
+                <h3 class="event-venue-name">
+                  The C-Note <span class="event-tag-pill tag-public">Public Show</span>
+                </h3>
+                <div class="event-location-time">
+                  <span>📍 Hull, MA</span>
+                  <span>⏰ 8:30 PM - 12:00 AM</span>
+                </div>
+                <p class="event-notes">
+                  Iconic beachfront venue! Bring your dancing shoes and party with Tower Hill all night long.
+                </p>
+              </div>
+              <div class="event-action-buttons">
+                <a href="https://maps.google.com/?q=The+C-Note+Hull+MA" target="_blank" rel="noopener" class="btn-compact btn-secondary">
+                  <span>📍 Directions</span>
+                </a>
+                <button class="btn-compact btn-primary" data-cal-export data-event-title="The C-Note Show" data-event-venue="The C-Note, Hull, MA" data-event-date="20261114T203000">
+                  <span>📅 Add to Phone</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Event 2 -->
+            <article class="event-card" data-type="public">
+              <div class="event-date-badge">
+                <span class="event-date-month">NOV</span>
+                <span class="event-date-day">27</span>
+                <span class="event-date-weekday">FRIDAY</span>
+              </div>
+              <div class="event-info">
+                <h3 class="event-venue-name">
+                  Gillary's Tavern <span class="event-tag-pill tag-public">Public Show</span>
+                </h3>
+                <div class="event-location-time">
+                  <span>📍 Plymouth, MA</span>
+                  <span>⏰ 9:00 PM - 12:30 AM</span>
+                </div>
+                <p class="event-notes">
+                  Thanksgiving weekend rock party! High energy cover rock classics and modern dance hits.
+                </p>
+              </div>
+              <div class="event-action-buttons">
+                <a href="https://maps.google.com/?q=Plymouth+MA" target="_blank" rel="noopener" class="btn-compact btn-secondary">
+                  <span>📍 Directions</span>
+                </a>
+                <button class="btn-compact btn-primary" data-cal-export data-event-title="Gillary's Tavern" data-event-venue="Gillary's Tavern, Plymouth, MA" data-event-date="20261127T210000">
+                  <span>📅 Add to Phone</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Event 3 -->
+            <article class="event-card" data-type="public">
+              <div class="event-date-badge">
+                <span class="event-date-month">DEC</span>
+                <span class="event-date-day">12</span>
+                <span class="event-date-weekday">SATURDAY</span>
+              </div>
+              <div class="event-info">
+                <h3 class="event-venue-name">
+                  South Shore Rock Pub <span class="event-tag-pill tag-public">Public Show</span>
+                </h3>
+                <div class="event-location-time">
+                  <span>📍 Brockton / Metro South, MA</span>
+                  <span>⏰ 8:00 PM - 11:30 PM</span>
+                </div>
+                <p class="event-notes">
+                  Hometown Brockton crowd! Great food, cold drinks, and nonstop singing along.
+                </p>
+              </div>
+              <div class="event-action-buttons">
+                <a href="https://maps.google.com/?q=Brockton+MA" target="_blank" rel="noopener" class="btn-compact btn-secondary">
+                  <span>📍 Directions</span>
+                </a>
+                <button class="btn-compact btn-primary" data-cal-export data-event-title="Hometown Rock Night" data-event-venue="Brockton, MA" data-event-date="20261212T200000">
+                  <span>📅 Add to Phone</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Event 4 (New Year's Eve) -->
+            <article class="event-card featured-gig" data-type="public">
+              <div class="event-date-badge">
+                <span class="event-date-month">DEC</span>
+                <span class="event-date-day">31</span>
+                <span class="event-date-weekday">THURSDAY</span>
+              </div>
+              <div class="event-info">
+                <h3 class="event-venue-name">
+                  New Year's Eve Rock Bash <span class="event-tag-pill tag-public">Special Event</span>
+                </h3>
+                <div class="event-location-time">
+                  <span>📍 Quincy / Boston South, MA</span>
+                  <span>⏰ 9:00 PM - 1:00 AM</span>
+                </div>
+                <p class="event-notes">
+                  Ring in the New Year with Tower Hill! Midnight champagne toast and 4 hours of pure rock & roll.
+                </p>
+              </div>
+              <div class="event-action-buttons">
+                <a href="https://maps.google.com/?q=Quincy+MA" target="_blank" rel="noopener" class="btn-compact btn-secondary">
+                  <span>📍 Directions</span>
+                </a>
+                <button class="btn-compact btn-primary" data-cal-export data-event-title="NYE Rock Bash" data-event-venue="Quincy, MA" data-event-date="20261231T210000">
+                  <span>📅 Add to Phone</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Event 5 (Private Function) -->
+            <article class="event-card" data-type="private">
+              <div class="event-date-badge">
+                <span class="event-date-month">JAN</span>
+                <span class="event-date-day">16</span>
+                <span class="event-date-weekday">SATURDAY</span>
+              </div>
+              <div class="event-info">
+                <h3 class="event-venue-name">
+                  Private Wedding Reception <span class="event-tag-pill tag-private">Private Function</span>
+                </h3>
+                <div class="event-location-time">
+                  <span>📍 Hingham, MA</span>
+                  <span>⏰ Private Event</span>
+                </div>
+                <p class="event-notes">
+                  Private booked party. Available for your wedding, birthday, or corporate celebration!
+                </p>
+              </div>
+              <div class="event-action-buttons">
+                <a href="#contact" class="btn-compact btn-secondary">
+                  <span>📞 Inquire About Dates</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 2: MUSIC LISTEN (Interactive Audio Player & Setlist)
+             ================================================================== -->
+        <section class="content-section" id="music">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Listen Before You Go</span>
+            <h2 class="section-title">Music & Hit Repertoire</h2>
+            <p class="section-desc">
+              From Elvis Presley to Katy Perry, 60s & 70s rock classics to 90s anthems and modern party hits. Tap play to preview!
+            </p>
+          </div>
+
+          <!-- Interactive Player -->
+          <div class="music-player-card" id="musicPlayerCard">
+            <div class="player-now-playing">
+              <div class="track-meta">
+                <div class="track-disc-icon">💿</div>
+                <div class="track-info">
+                  <h3 id="nowPlayingTitle">Don't Stop Believin'</h3>
+                  <p id="nowPlayingArtist">Tower Hill Live (Journey Cover)</p>
+                </div>
+              </div>
+              <div class="player-controls">
+                <button class="player-step-btn" id="prevTrackBtn" aria-label="Previous Track">⏮</button>
+                <button class="btn-play-pause" id="playPauseBtn" aria-label="Play Track">▶</button>
+                <button class="player-step-btn" id="nextTrackBtn" aria-label="Next Track">⏭</button>
+              </div>
+            </div>
+
+            <!-- Waveform Visualizer -->
+            <div class="waveform-visualizer">
+              <div class="waveform-bar" style="height: 40%"></div>
+              <div class="waveform-bar" style="height: 65%"></div>
+              <div class="waveform-bar" style="height: 85%"></div>
+              <div class="waveform-bar" style="height: 50%"></div>
+              <div class="waveform-bar" style="height: 75%"></div>
+              <div class="waveform-bar" style="height: 95%"></div>
+              <div class="waveform-bar" style="height: 60%"></div>
+              <div class="waveform-bar" style="height: 40%"></div>
+              <div class="waveform-bar" style="height: 80%"></div>
+              <div class="waveform-bar" style="height: 70%"></div>
+              <div class="waveform-bar" style="height: 90%"></div>
+              <div class="waveform-bar" style="height: 55%"></div>
+              <div class="waveform-bar" style="height: 45%"></div>
+              <div class="waveform-bar" style="height: 85%"></div>
+              <div class="waveform-bar" style="height: 65%"></div>
+              <div class="waveform-bar" style="height: 35%"></div>
+            </div>
+
+            <!-- Track Selector List -->
+            <div class="player-playlist">
+              <div class="playlist-item active" data-track-index="0">
+                <span>1. Don't Stop Believin'</span>
+                <span>3:45</span>
+              </div>
+              <div class="playlist-item" data-track-index="1">
+                <span>2. Livin' on a Prayer</span>
+                <span>4:05</span>
+              </div>
+              <div class="playlist-item" data-track-index="2">
+                <span>3. Sweet Child O' Mine</span>
+                <span>4:12</span>
+              </div>
+              <div class="playlist-item" data-track-index="3">
+                <span>4. Rolling in the Deep</span>
+                <span>3:48</span>
+              </div>
+              <div class="playlist-item" data-track-index="4">
+                <span>5. Brown Eyed Girl</span>
+                <span>3:20</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 3: MEET THE BAND (Real Bios & Genuine Wix Photo)
+             ================================================================== -->
+        <section class="content-section" id="band">
+          <div class="section-header">
+            <span class="section-subtitle-tag">South Shore Favorites</span>
+            <h2 class="section-title">Meet Tower Hill</h2>
+            <p class="section-desc">
+              "Bring your dancing shoes, your drinking hat, and an extra pair of socks, because Tower Hill will rock you out of yours!"
+            </p>
+          </div>
+
+          <!-- Real Band Photo from Info Page -->
+          <div class="band-group-feature">
+            <img src="assets/band_info_real.jpg" alt="Tower Hill Band Members Caroline, Bob, Jay, and Stormy" class="band-group-img">
+            <div class="band-group-caption">
+              🎸 Tower Hill Live: Caroline Driscoll, Bob Fallon, Jay Driscoll, and Stormy Thorson.
+            </div>
+          </div>
+
+          <div style="height: 1.5rem"></div>
+
+          <!-- Real Band Members Grid with Wix Bios -->
+          <div class="band-roster-grid">
+            <!-- Caroline -->
+            <article class="member-card">
+              <span class="member-instrument-badge">Lead Vocals & Frontwoman</span>
+              <h3 class="member-name">Caroline Driscoll</h3>
+              <p class="member-bio">
+                A vivacious and powerful frontwoman, Caroline can be found singing her heart out from table tops, chairs, and the tops of bars most nights. In your face and interacting with the crowd, this quick witted dynamo keeps you dancing, singing, and laughing all night long.
+              </p>
+            </article>
+
+            <!-- Bob Fallon -->
+            <article class="member-card" style="border-color: #3b82f6;">
+              <span class="member-instrument-badge" style="background: #2563eb;">Bass & Booking Coordinator</span>
+              <h3 class="member-name">Bob Fallon</h3>
+              <p class="member-bio">
+                A staple of the south shore, bassist Bob Fallon is a natural performer and keeps the energy high all night. His passion and love of rock and roll literally drips from his luscious locks. Bob also handles booking and band coordination.
+              </p>
+            </article>
+
+            <!-- Jay Driscoll -->
+            <article class="member-card">
+              <span class="member-instrument-badge">Lead Guitar</span>
+              <h3 class="member-name">Jay Driscoll</h3>
+              <p class="member-bio">
+                This virtuoso guitarist brings the rock each and every night. His blistering solos and matinee idol good looks melt faces, and hearts.
+              </p>
+            </article>
+
+            <!-- Stormy Thorson -->
+            <article class="member-card">
+              <span class="member-instrument-badge">Drums & Percussion</span>
+              <h3 class="member-name">Stormy Thorson</h3>
+              <p class="member-bio">
+                Drummer Stormy Thorson combines performance and musicianship in every beat. A long time fixture on the local music scene, he is a charming and delightful character.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 4: SOCIAL FEEDS & PHOTO GALLERY
+             ================================================================== -->
+        <section class="content-section" id="social">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Stay Connected</span>
+            <h2 class="section-title">Follow On Social Media</h2>
+            <p class="section-desc">
+              Follow Tower Hill on Facebook, Instagram, and TikTok for gig announcements, live videos, and crowd photos!
+            </p>
+          </div>
+
+          <div class="social-hub-container">
+            <!-- Social Buttons -->
+            <div class="social-platforms-row">
+              <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener" class="social-button btn-facebook">
+                <span>📘 Facebook (@TowerHillMusic)</span>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-button btn-instagram">
+                <span>📷 Instagram (@TowerHillRocks)</span>
+              </a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-button btn-tiktok">
+                <span>🎵 TikTok</span>
+              </a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="social-button btn-youtube">
+                <span>▶ YouTube</span>
+              </a>
+            </div>
+
+            <!-- Embedded Post Previews (Facebook & Instagram) -->
+            <div class="social-embeds-grid">
+              <!-- Facebook Post Embed Preview -->
+              <article class="embed-post-card">
+                <div class="embed-post-header">
+                  <span class="embed-source-badge">📘</span>
+                  <div class="embed-post-author">
+                    <h4>Tower Hill Band</h4>
+                    <span>October 24 at 10:15 PM • South Shore</span>
+                  </div>
+                </div>
+                <div class="embed-post-content">
+                  <p>
+                    What a night at the tavern! Thank you to everyone who packed the dance floor and sang every word with Caroline and Jay. Next stop: The C-Note on Nov 14! Who’s ready?! 🎸🔥
+                  </p>
+                </div>
+                <img src="assets/gallery_1.jpg" alt="Live crowd at Tower Hill show" class="embed-post-media">
+                <div class="embed-post-footer">
+                  <span>👍 184 Likes • 42 Comments</span>
+                  <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener" style="color: #60a5fa; font-weight:700;">View on Facebook →</a>
+                </div>
+              </article>
+
+              <!-- Instagram Reel/Photo Embed Preview -->
+              <article class="embed-post-card">
+                <div class="embed-post-header">
+                  <span class="embed-source-badge">📷</span>
+                  <div class="embed-post-author">
+                    <h4>@TowerHillRocks</h4>
+                    <span>Instagram Reel • Hull, Massachusetts</span>
+                  </div>
+                </div>
+                <div class="embed-post-content">
+                  <p>
+                    Caroline taking it to the bar tops! Never a dull moment with South Shore's most energetic rock crowd. Tag yourself in the comments! 🎤🍺 #TowerHillRocks
+                  </p>
+                </div>
+                <img src="assets/gallery_3.jpg" alt="Tower Hill live stage performance" class="embed-post-media">
+                <div class="embed-post-footer">
+                  <span>❤️ 312 Likes • 28 Comments</span>
+                  <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener" style="color: #f472b6; font-weight:700;">View on Instagram →</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Band Photo Gallery (From Original Wix Gallery) -->
+            <div class="section-header" style="margin-bottom: 1.25rem;">
+              <h3 style="font-size: 1.35rem; color: #fff;">Live Show Photo Gallery</h3>
+              <p style="color: #94a3b8; font-size: 0.9rem;">Real moments from past South Shore club shows and functions.</p>
+            </div>
+
+            <div class="photo-gallery-grid">
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_1.jpg" alt="Tower Hill Show Photo 1">
+              </div>
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_2.jpg" alt="Tower Hill Show Photo 2">
+              </div>
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_3.jpg" alt="Tower Hill Show Photo 3">
+              </div>
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_4.jpg" alt="Tower Hill Show Photo 4">
+              </div>
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_5.jpg" alt="Tower Hill Show Photo 5">
+              </div>
+              <div class="gallery-thumbnail">
+                <img src="assets/gallery_6.jpg" alt="Tower Hill Show Photo 6">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 5: CONTACT BOB & BOOKING
+             ================================================================== -->
+        <section class="content-section" id="contact">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Book Tower Hill</span>
+            <h2 class="section-title">Contact & Booking</h2>
+            <p class="section-desc">
+              Available for South Shore & Boston area clubs, private functions, weddings, festivals, and parties.
+            </p>
+          </div>
+
+          <div class="booking-section-wrap">
+            <!-- Dedicated Bob Fallon Booking Card -->
+            <div class="bob-contact-card">
+              <div class="bob-card-left">
+                <div class="bob-avatar-badge">🎸</div>
+                <div class="bob-details">
+                  <h3>Bob Fallon</h3>
+                  <p>Booking Coordinator & Bassist</p>
+                  <p style="color: #e2e8f0; font-size: 0.9rem; margin-top: 0.25rem;">
+                    "Give me a call anytime! We customize our setlist and sound to make your party unforgettable."
+                  </p>
+                </div>
+              </div>
+              <div class="bob-direct-actions">
+                <a href="tel:5083264460" class="btn-bob-call">
+                  <span>📞 Call Bob: (508) 326-4460</span>
+                </a>
+                <a href="mailto:TowerHillRocks@gmail.com" class="btn-bob-email">
+                  <span>✉️ Email Bob</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick 3-Field Booking Form -->
+            <div class="booking-form-box">
+              <h3 class="booking-form-title">Or Send a Fast Booking Request</h3>
+              <p class="booking-form-sub">Bob Fallon will get right back to you within 24 hours.</p>
+
+              <form id="quickBookingForm">
+                <div class="simple-form-grid">
+                  <div class="form-field">
+                    <label for="clientName">Your Name *</label>
+                    <input type="text" id="clientName" class="form-input" placeholder="e.g. Mike Sullivan" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="clientContact">Phone or Email *</label>
+                    <input type="text" id="clientContact" class="form-input" placeholder="e.g. 508-555-0199 or email" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="eventDate">Target Event Date</label>
+                    <input type="date" id="eventDate" class="form-input">
+                  </div>
+                </div>
+
+                <div class="form-field" style="margin-top: 0.75rem;">
+                  <label for="eventDetails">Event Type / Venue Notes</label>
+                  <input type="text" id="eventDetails" class="form-input" placeholder="e.g. 50th Birthday Party in Plymouth, or Tavern gig in Quincy">
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="btn-submit-booking">
+                    <span>✉️ Send Request to Bob</span>
+                  </button>
+                </div>
+
+                <div class="form-success-alert" id="bookingSuccessAlert">
+                  ✅ Thank you! Your booking request has been sent to Bob Fallon. Bob will call or email you shortly at the contact information provided!
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 6: VIP MAILING LIST / GIG ALERTS
+             ================================================================== -->
+        <section class="content-section" id="newsletter">
+          <div class="newsletter-card">
+            <div class="newsletter-icon">📬</div>
+            <h2 class="newsletter-title">Join The Tower Hill VIP Fan Club</h2>
+            <p class="newsletter-sub">
+              Be the first to know when we announce new tavern dates, outdoor festivals, and holiday shows around the South Shore. No spam ever!
+            </p>
+            <form id="newsletterForm" class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address for gig alerts">
+              <button type="submit" class="newsletter-btn">
+                <span>Join Fan Club</span>
+              </button>
+            </form>
+            <div class="newsletter-feedback" id="newsletterFeedback"></div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             FOOTER
+             ================================================================== -->
+        <footer class="band-site-footer">
+          <img src="assets/band_logo_bw.jpg" alt="Tower Hill Band" class="footer-logo">
+          <p class="footer-text">
+            Tower Hill • Brockton, South Shore & Metro Boston, Massachusetts
+          </p>
+          <p class="footer-text">
+            Booking & Info: Bob Fallon • <a href="tel:5083264460" style="color: #94a3b8;">(508) 326-4460</a> • <a href="mailto:TowerHillRocks@gmail.com" style="color: #94a3b8;">TowerHillRocks@gmail.com</a>
+          </p>
+          <div class="footer-links">
+            <a href="#home" class="footer-link">Top of Page</a>
+            <a href="#shows" class="footer-link">Show Schedule</a>
+            <a href="#music" class="footer-link">Listen</a>
+            <a href="#contact" class="footer-link">Book Bob</a>
+            <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener" class="footer-link">Facebook</a>
+          </div>
+        </footer>
+
+        <!-- ==================================================================
+             MOBILE STICKY BOTTOM BAR (Tech-Illiterate Quick Actions)
+             ================================================================== -->
+        <div class="mobile-sticky-bottom-bar" id="mobileStickyBar">
+          <div class="bottom-actions-row">
+            <a href="tel:5083264460" class="bottom-action-btn bottom-call-btn">
+              <span>📞 Call Bob</span>
+            </a>
+            <a href="#shows" class="bottom-action-btn bottom-shows-btn">
+              <span>📅 Next Show</span>
+            </a>
+            <a href="#music" class="bottom-action-btn bottom-listen-btn">
+              <span>🎵 Listen</span>
+            </a>
+          </div>
+        </div><!-- End mobile-sticky-bottom-bar -->
+
+      
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* ==========================================================================
+   Tower Hill Band Website Prototyping - Theme Variations
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   THEME 1: "Midnight Stage Rock" (High Contrast Concert / Tavern Vibe)
+   -------------------------------------------------------------------------- */
+.theme-rock-dark {
+  --theme-bg: #090a0e;
+  --theme-text: #f1f5f9;
+  --theme-text-muted: #94a3b8;
+  
+  --nav-bg: rgba(11, 13, 17, 0.96);
+  --nav-border: #232836;
+  
+  --accent-color: #e63946;
+  --accent-glow: rgba(230, 57, 70, 0.35);
+  --accent-hover: #ff4757;
+  
+  --menu-btn-bg: #1c212c;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #333c50;
+  --menu-btn-hover-bg: #293040;
+  
+  --dropdown-bg: #11141c;
+  
+  --card-bg: #141720;
+  --card-border: #252b3b;
+  --card-hover-bg: #1a1f2b;
+  
+  --ribbon-bg: #161c27;
+  
+  --bob-card-bg: #131d2e;
+  --bob-card-border: #2563eb;
+}
+
+.theme-rock-dark .section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.theme-rock-dark .hero-title {
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+}
+
+.theme-rock-dark .event-date-month {
+  color: #ff4d5a;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 2: "South Shore Pub & Friendly" (Ultra-Legible for Tech-Illiterate)
+   -------------------------------------------------------------------------- */
+.theme-pub-clean {
+  --theme-bg: #16191f;
+  --theme-text: #ffffff;
+  --theme-text-muted: #cbd5e1;
+  
+  --nav-bg: #101217;
+  --nav-border: #384252;
+  
+  --accent-color: #f97316; /* Warm inviting amber-orange */
+  --accent-glow: rgba(249, 115, 22, 0.35);
+  --accent-hover: #fb923c;
+  
+  --menu-btn-bg: #2d3748;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #4a5568;
+  --menu-btn-hover-bg: #4a5568;
+  
+  --dropdown-bg: #1a202c;
+  
+  --card-bg: #1e2430;
+  --card-border: #3f4c61;
+  --card-hover-bg: #262e3d;
+  
+  --ribbon-bg: #222b3a;
+  
+  --bob-card-bg: #1a2c24;
+  --bob-card-border: #22c55e;
+}
+
+/* Extra clarity elements for South Shore Pub theme */
+@media (min-width: 601px) {
+  .theme-pub-clean .nav-schedule-btn {
+    font-size: 1.05rem;
+    padding: 0.75rem 1.35rem;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  }
+
+  .theme-pub-clean .nav-menu-btn {
+    font-size: 1.05rem;
+    padding: 0.75rem 1.25rem;
+    background: #374151;
+    border-width: 2px;
+  }
+}
+
+.theme-pub-clean .event-card {
+  border-width: 3px;
+  background: #1e2430;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.theme-pub-clean .event-venue-name {
+  font-size: 1.45rem;
+  color: #ffffff;
+}
+
+.theme-pub-clean .event-location-time {
+  font-size: 1.05rem;
+  color: #f1f5f9;
+}
+
+.theme-pub-clean .member-name {
+  font-size: 1.45rem;
+}
+
+.theme-pub-clean .member-bio {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 3: "Live Gig Hub" (Tour & Event Focused Layout)
+   -------------------------------------------------------------------------- */
+.theme-gig-hub {
+  --theme-bg: #0d1117;
+  --theme-text: #f0f6fc;
+  --theme-text-muted: #8b949e;
+  
+  --nav-bg: rgba(13, 17, 23, 0.98);
+  --nav-border: #30363d;
+  
+  --accent-color: #38bdf8; /* Electric concert cyan */
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --accent-hover: #7dd3fc;
+  
+  --menu-btn-bg: #21262d;
+  --menu-btn-color: #f0f6fc;
+  --menu-btn-border: #30363d;
+  --menu-btn-hover-bg: #30363d;
+  
+  --dropdown-bg: #161b22;
+  
+  --card-bg: #161b22;
+  --card-border: #30363d;
+  --card-hover-bg: #21262d;
+  
+  --ribbon-bg: #1a2230;
+  
+  --bob-card-bg: #162638;
+  --bob-card-border: #38bdf8;
+}
+
+.theme-gig-hub .hero-tag {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.theme-gig-hub .nav-schedule-btn {
+  background: #38bdf8;
+  color: #082f49;
+}
+
+.theme-gig-hub .event-card.featured-gig {
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.theme-gig-hub .event-date-month {
+  color: #38bdf8;
+}
+
+/* Tour-First Layout: Promotes Upcoming Schedule to the Top */
+.theme-gig-hub .site-viewport,
+.site-viewport.theme-gig-hub {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-gig-hub .band-nav-bar,
+.site-viewport.theme-gig-hub .band-nav-bar {
+  order: 0;
+}
+
+.theme-gig-hub .next-gig-ribbon,
+.site-viewport.theme-gig-hub .next-gig-ribbon {
+  order: 1;
+}
+
+.theme-gig-hub #shows,
+.site-viewport.theme-gig-hub #shows {
+  order: 2;
+  border-bottom: 2px solid #30363d;
+}
+
+.theme-gig-hub .hero-section,
+.site-viewport.theme-gig-hub .hero-section {
+  order: 3;
+}
+
+.theme-gig-hub #music,
+.site-viewport.theme-gig-hub #music {
+  order: 4;
+}
+
+.theme-gig-hub #band,
+.site-viewport.theme-gig-hub #band {
+  order: 5;
+}
+
+.theme-gig-hub #social,
+.site-viewport.theme-gig-hub #social {
+  order: 6;
+}
+
+.theme-gig-hub #contact,
+.site-viewport.theme-gig-hub #contact {
+  order: 7;
+}
+
+.theme-gig-hub #newsletter,
+.site-viewport.theme-gig-hub #newsletter {
+  order: 8;
+}
+
+.theme-gig-hub .band-site-footer,
+.site-viewport.theme-gig-hub .band-site-footer {
+  order: 9;
+}
+
+.theme-gig-hub .mobile-sticky-bottom-bar,
+.site-viewport.theme-gig-hub .mobile-sticky-bottom-bar {
+  order: 10;
+}
+
+/* --------------------------------------------------------------------------
+   THEME 4: "Modern Monochrome & Platinum" (Crisp B&W Minimalist Rock)
+   -------------------------------------------------------------------------- */
+.theme-monochrome-clean {
+  --theme-bg: #0b0c0e;
+  --theme-text: #ffffff;
+  --theme-text-muted: #a1a1aa;
+  
+  --nav-bg: #000000;
+  --nav-border: #3f3f46;
+  
+  --accent-color: #f4f4f5;
+  --accent-glow: rgba(255, 255, 255, 0.25);
+  --accent-hover: #ffffff;
+  
+  --menu-btn-bg: #27272a;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #52525b;
+  --menu-btn-hover-bg: #3f3f46;
+  
+  --dropdown-bg: #18181b;
+  
+  --card-bg: #18181b;
+  --card-border: #3f3f46;
+  --card-hover-bg: #27272a;
+  
+  --ribbon-bg: #222226;
+  
+  --bob-card-bg: #1a1a20;
+  --bob-card-border: #ffffff;
+}
+
+.theme-monochrome-clean .nav-schedule-btn {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  border-color: #ffffff;
+}
+
+.theme-monochrome-clean .btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  font-weight: 700;
+}
+
+.theme-monochrome-clean .btn-primary:hover {
+  background: #e4e4e7;
+  color: #000000;
+}
+
+.theme-monochrome-clean .hero-tag {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #71717a;
+  color: #f4f4f5;
+}
+
+.theme-monochrome-clean .event-card.featured-gig {
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+}
+
+.theme-monochrome-clean .event-date-month {
+  color: #ffffff;
+}
+
+.theme-monochrome-clean .btn-bob-call {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  font-weight: 800;
+}
+
+.theme-monochrome-clean .btn-bob-call:hover {
+  background: #e4e4e7;
+}
+
+.theme-monochrome-clean .section-title {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.theme-monochrome-clean .ribbon-badge {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 900;
+}
+
+.theme-monochrome-clean .bottom-shows-btn {
+  background: #ffffff;
+  color: #000000;
+}
