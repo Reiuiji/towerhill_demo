@@ -83,9 +83,38 @@ function initNavigationAndControls() {
     document.documentElement.style.setProperty('--nav-height', `${Math.max(44, Math.round(rect.bottom))}px`);
   }
 
+  const overlayLinks = document.querySelectorAll('.overlay-link-card');
+  const trackedSections = ['shows', 'music', 'band', 'social', 'contact', 'newsletter']
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  function setActiveMenuLink(sectionId) {
+    overlayLinks.forEach((link) => {
+      const target = (link.getAttribute('href') || '').replace('#', '');
+      const isMatch = target === sectionId;
+      link.classList.toggle('is-active', isMatch);
+      if (isMatch) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  function detectActiveSectionFromScroll() {
+    if (!trackedSections.length) return;
+    const offset = (navBar ? navBar.getBoundingClientRect().height : 60) + 120;
+    let currentId = trackedSections[0].id;
+    trackedSections.forEach((sec) => {
+      const top = sec.getBoundingClientRect().top;
+      if (top <= offset) {
+        currentId = sec.id;
+      }
+    });
+    setActiveMenuLink(currentId);
+  }
+
   function openMenu() {
     if (!menuOverlay || !menuBtn) return;
     syncNavHeight();
+    detectActiveSectionFromScroll();
     menuOverlay.classList.add('is-open');
     menuBtn.classList.add('active');
     menuBtn.setAttribute('aria-expanded', 'true');
@@ -122,9 +151,31 @@ function initNavigationAndControls() {
     });
   }
 
-  document.querySelectorAll('.overlay-link-card, .quick-dial-btn, .quick-text-btn').forEach((link) => {
+  overlayLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.slice(1);
+        const targetEl = document.getElementById(targetId);
+        setActiveMenuLink(targetId);
+        closeMenu();
+        if (targetEl) {
+          requestAnimationFrame(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+      } else {
+        closeMenu();
+      }
+    });
+  });
+
+  document.querySelectorAll('.quick-dial-btn, .quick-text-btn').forEach((link) => {
     link.addEventListener('click', () => closeMenu());
   });
+
+  detectActiveSectionFromScroll();
 
   if (scheduleBtn) {
     scheduleBtn.addEventListener('click', (e) => {
