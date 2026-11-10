@@ -71,16 +71,25 @@ function decodeProtectedContacts() {
    2. NAVIGATION, SLIDE-DOWN MENU, TEXT SCALER & MODULAR THEME SWITCHER
    ========================================================================== */
 function initNavigationAndControls() {
+  const navBar = document.getElementById('bandTopBar');
   const menuBtn = document.getElementById('bandMenuToggleBtn');
   const menuOverlay = document.getElementById('dropdownMenuOverlay');
   const closeBtn = document.getElementById('menuCloseBtn');
   const scheduleBtn = document.getElementById('navScheduleBtn');
 
+  function syncNavHeight() {
+    if (!navBar) return;
+    const rect = navBar.getBoundingClientRect();
+    document.documentElement.style.setProperty('--nav-height', `${Math.max(44, Math.round(rect.bottom))}px`);
+  }
+
   function openMenu() {
     if (!menuOverlay || !menuBtn) return;
+    syncNavHeight();
     menuOverlay.classList.add('is-open');
     menuBtn.classList.add('active');
     menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
@@ -88,7 +97,12 @@ function initNavigationAndControls() {
     menuOverlay.classList.remove('is-open');
     menuBtn.classList.remove('active');
     menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   }
+
+  window.addEventListener('resize', () => {
+    if (menuOverlay && menuOverlay.classList.contains('is-open')) syncNavHeight();
+  });
 
   if (menuBtn) {
     menuBtn.addEventListener('click', (e) => {
@@ -154,6 +168,7 @@ function initNavigationAndControls() {
     if (fontDec) fontDec.classList.toggle('active', textScale < 0.98);
     if (fontNorm) fontNorm.classList.toggle('active', Math.abs(textScale - 1) <= 0.02);
     if (fontInc) fontInc.classList.toggle('active', textScale > 1.02);
+    if (menuOverlay && menuOverlay.classList.contains('is-open')) syncNavHeight();
   }
 
   applyScale(textScale);
