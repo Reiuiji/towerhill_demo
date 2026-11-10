@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Tower Hill Band (demov1) - Modular Theme Stylesheet (themes.css)
+   Default Theme: Style A (.theme-rock-dark - Midnight Stage Rock)
+   To switch default theme site-wide, change the body class in index.html to:
+     - theme-rock-dark        (Style A: Midnight Stage Rock - Default)
+     - theme-pub-clean        (Style B: South Shore Pub - Warm & Extra-Large)
+     - theme-gig-hub          (Style C: Live Gig Hub - Tour-First Cyan)
+     - theme-monochrome-clean (Style D: Modern Monochrome - Crisp B&W)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   STYLE A (DEFAULT): "Midnight Stage Rock" (High Contrast Concert Dark Mode)
+   -------------------------------------------------------------------------- */
+:root,
+.theme-rock-dark {
+  --theme-bg: #090a0e;
+  --theme-bg-alt: #0f1219;
+  --theme-text: #f1f5f9;
+  --theme-text-muted: #94a3b8;
+
+  --nav-bg: #0b0d12;
+  --nav-border: #232836;
+
+  --accent-color: #e63946;
+  --accent-glow: rgba(230, 57, 70, 0.35);
+  --accent-hover: #ff4757;
+  --accent-contrast: #ffffff;
+
+  --menu-btn-bg: #1c212c;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #333c50;
+  --menu-btn-hover-bg: #293040;
+
+  --dropdown-bg: #11141c;
+
+  --card-bg: #141720;
+  --card-border: #252b3b;
+  --card-hover-bg: #1a1f2b;
+
+  --ribbon-bg: #161c27;
+
+  --bob-card-bg: #131d2e;
+  --bob-card-border: #2563eb;
+}
+
+.theme-rock-dark .section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.theme-rock-dark .hero-title {
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+}
+
+.theme-rock-dark .event-date-month {
+  color: #ff4d5a;
+}
+
+/* --------------------------------------------------------------------------
+   STYLE B: "South Shore Pub & Friendly" (Warm Tavern & Extra-Legible)
+   -------------------------------------------------------------------------- */
+.theme-pub-clean {
+  --theme-bg: #16191f;
+  --theme-bg-alt: #1b2028;
+  --theme-text: #ffffff;
+  --theme-text-muted: #cbd5e1;
+
+  --nav-bg: #101217;
+  --nav-border: #384252;
+
+  --accent-color: #f97316;
+  --accent-glow: rgba(249, 115, 22, 0.35);
+  --accent-hover: #fb923c;
+  --accent-contrast: #ffffff;
+
+  --menu-btn-bg: #2d3748;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #4a5568;
+  --menu-btn-hover-bg: #4a5568;
+
+  --dropdown-bg: #1a202c;
+
+  --card-bg: #1e2430;
+  --card-border: #3f4c61;
+  --card-hover-bg: #262e3d;
+
+  --ribbon-bg: #222b3a;
+
+  --bob-card-bg: #1a2c24;
+  --bob-card-border: #22c55e;
+}
+
+.theme-pub-clean .event-card {
+  border-width: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   STYLE C: "Live Gig Hub" (Tour & Event-Focused Electric Cyan)
+   -------------------------------------------------------------------------- */
+.theme-gig-hub {
+  --theme-bg: #0d1117;
+  --theme-bg-alt: #121820;
+  --theme-text: #f0f6fc;
+  --theme-text-muted: #8b949e;
+
+  --nav-bg: #0d1117;
+  --nav-border: #30363d;
+
+  --accent-color: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --accent-hover: #7dd3fc;
+  --accent-contrast: #082f49;
+
+  --menu-btn-bg: #21262d;
+  --menu-btn-color: #f0f6fc;
+  --menu-btn-border: #30363d;
+  --menu-btn-hover-bg: #30363d;
+
+  --dropdown-bg: #161b22;
+
+  --card-bg: #161b22;
+  --card-border: #30363d;
+  --card-hover-bg: #21262d;
+
+  --ribbon-bg: #1a2230;
+
+  --bob-card-bg: #162638;
+  --bob-card-border: #38bdf8;
+}
+
+.theme-gig-hub .nav-schedule-btn {
+  background: #38bdf8;
+  color: #082f49;
+}
+
+/* Tour-first ordering when Style C is active */
+body.theme-gig-hub main.site-main {
+  display: flex;
+  flex-direction: column;
+}
+body.theme-gig-hub .next-gig-ribbon { order: 1; }
+body.theme-gig-hub #shows { order: 2; }
+body.theme-gig-hub .hero-section { order: 3; }
+body.theme-gig-hub #music { order: 4; }
+body.theme-gig-hub #band { order: 5; }
+body.theme-gig-hub #gallery { order: 6; }
+body.theme-gig-hub #social { order: 7; }
+body.theme-gig-hub #contact { order: 8; }
+body.theme-gig-hub #newsletter { order: 9; }
+
+/* --------------------------------------------------------------------------
+   STYLE D: "Modern Monochrome & Platinum" (Crisp Black & White)
+   -------------------------------------------------------------------------- */
+.theme-monochrome-clean {
+  --theme-bg: #0b0c0e;
+  --theme-bg-alt: #121216;
+  --theme-text: #ffffff;
+  --theme-text-muted: #a1a1aa;
+
+  --nav-bg: #000000;
+  --nav-border: #3f3f46;
+
+  --accent-color: #f4f4f5;
+  --accent-glow: rgba(255, 255, 255, 0.25);
+  --accent-hover: #ffffff;
+  --accent-contrast: #000000;
+
+  --menu-btn-bg: #27272a;
+  --menu-btn-color: #ffffff;
+  --menu-btn-border: #52525b;
+  --menu-btn-hover-bg: #3f3f46;
+
+  --dropdown-bg: #18181b;
+
+  --card-bg: #18181b;
+  --card-border: #3f3f46;
+  --card-hover-bg: #27272a;
+
+  --ribbon-bg: #222226;
+
+  --bob-card-bg: #1a1a20;
+  --bob-card-border: #ffffff;
+}
+
+.theme-monochrome-clean .nav-schedule-btn,
+.theme-monochrome-clean .btn-primary,
+.theme-monochrome-clean .ribbon-badge {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 800;
+}
+

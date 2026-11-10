@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower Hill • South Shore Rock &amp; Pop Cover Band</title>
+  <meta name="description" content="Tower Hill is a high-energy South Shore &amp; Greater Boston rock and pop cover band. See upcoming shows, watch live video, listen on SoundCloud, and book Bob Fallon.">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/themes.css">
+</head>
+<body class="theme-rock-dark">
+  <a href="#mainContent" class="skip-to-content">Skip to main content</a>
+
+  <!-- ======================================================================
+       TOP BAR: [Shows Left] | [B&W Logo Center] | [MENU Right]
+       ====================================================================== -->
+  <nav class="band-nav-bar" id="bandTopBar" aria-label="Main Navigation">
+    <div class="nav-schedule-action">
+      <button type="button" class="nav-schedule-btn" id="navScheduleBtn" aria-label="Jump to Upcoming Shows">
+        <span>🗓️ Shows</span>
+        <span class="btn-badge" id="navNextShowBadge">Upcoming</span>
+      </button>
+    </div>
+
+    <a href="#home" class="nav-logo-showcase" title="Tower Hill Home">
+      <img src="../assets/logo_bw_skyline.jpg" alt="Tower Hill Band Black and White Logo" class="nav-logo-img">
+    </a>
+
+    <div class="nav-menu-action">
+      <button type="button" class="nav-menu-btn" id="bandMenuToggleBtn" aria-expanded="false" aria-controls="dropdownMenuOverlay" aria-label="Open Site Menu">
+        <span aria-hidden="true">☰</span>
+        <span>MENU</span>
+      </button>
+    </div>
+
+    <!-- ====================================================================
+         SOLID SLIDE-DOWN OVERLAY MENU
+         ==================================================================== -->
+    <div class="dropdown-menu-overlay" id="dropdownMenuOverlay" role="dialog" aria-modal="true" aria-label="Band Navigation Menu">
+      <div class="overlay-inner">
+        <div class="overlay-header-note">
+          <span>📍 Tap any big button below to jump straight there</span>
+
+          <div class="overlay-tools-row">
+            <!-- Working Accessibility Text Size Controls -->
+            <div class="menu-tool-pill" role="group" aria-label="Text Size">
+              <span class="menu-tool-label">Text:</span>
+              <button type="button" class="tool-mini-btn" id="fontDecreaseBtn" title="Smaller text">A-</button>
+              <button type="button" class="tool-mini-btn active" id="fontNormalBtn" title="Normal text size">Normal</button>
+              <button type="button" class="tool-mini-btn" id="fontIncreaseBtn" title="Larger text">A+</button>
+            </div>
+
+            <!-- Modular Theme Switcher (themes.css) -->
+            <div class="menu-tool-pill" role="group" aria-label="Color Theme">
+              <span class="menu-tool-label">Theme:</span>
+              <button type="button" class="tool-mini-btn active" data-set-theme="theme-rock-dark">Stage Rock</button>
+              <button type="button" class="tool-mini-btn" data-set-theme="theme-pub-clean">Pub</button>
+              <button type="button" class="tool-mini-btn" data-set-theme="theme-gig-hub">Gig Hub</button>
+              <button type="button" class="tool-mini-btn" data-set-theme="theme-monochrome-clean">B&amp;W</button>
+            </div>
+
+            <button type="button" class="overlay-close-btn" id="menuCloseBtn" aria-label="Close Menu">✕ Close</button>
+          </div>
+        </div>
+
+        <div class="overlay-links-grid">
+          <a href="#shows" class="overlay-link-card">
+            <div class="overlay-link-icon">📅</div>
+            <div class="overlay-link-text">
+              <h3>Upcoming Shows</h3>
+              <p id="menuNextShowDesc">Live dates around the South Shore &amp; Boston</p>
+            </div>
+          </a>
+
+          <a href="#music" class="overlay-link-card">
+            <div class="overlay-link-icon">🎵</div>
+            <div class="overlay-link-text">
+              <h3>Watch &amp; Listen</h3>
+              <p>Live concert video &amp; SoundCloud tracks</p>
+            </div>
+          </a>
+
+          <a href="#band" class="overlay-link-card">
+            <div class="overlay-link-icon">🎸</div>
+            <div class="overlay-link-text">
+              <h3>Meet the Band</h3>
+              <p>Caroline, Bob, Jay &amp; Stormy</p>
+            </div>
+          </a>
+
+          <a href="#social" class="overlay-link-card">
+            <div class="overlay-link-icon">📱</div>
+            <div class="overlay-link-text">
+              <h3>Social &amp; Photos</h3>
+              <p>Facebook, YouTube, X, SoundCloud &amp; gallery</p>
+            </div>
+          </a>
+
+          <a href="#contact" class="overlay-link-card">
+            <div class="overlay-link-icon">📞</div>
+            <div class="overlay-link-text">
+              <h3>Book Tower Hill</h3>
+              <p>Contact Bob Fallon: <span data-cf-phone="5a726f6a62737a69686c776e6e6c6a">Click to call</span></p>
+            </div>
+          </a>
+
+          <a href="#newsletter" class="overlay-link-card">
+            <div class="overlay-link-icon">📬</div>
+            <div class="overlay-link-text">
+              <h3>VIP Mailing List</h3>
+              <p>Get gig alerts in your inbox</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Protected Direct Contact Strip for Bob Fallon -->
+        <div class="overlay-quick-contact">
+          <div class="quick-contact-info">
+            <div class="quick-contact-icon">📞</div>
+            <div class="quick-contact-text">
+              <h4>Book Tower Hill for your club, wedding, or party</h4>
+              <p>Bob Fallon • <span data-cf-phone="5a726f6a62737a69686c776e6e6c6a">[Protected]</span></p>
+            </div>
+          </div>
+          <div class="quick-contact-btns">
+            <a href="#contact" data-cf-tel="5a6f6a6269686c6e6e6c6a" class="quick-dial-btn">
+              <span>📞 Call Bob</span>
+            </a>
+            <a href="#contact" data-cf-sms="5a6f6a6269686c6e6e6c6a" class="quick-text-btn">
+              <span>💬 Text Bob</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="site-main" id="mainContent">
+    <!-- ====================================================================
+         HERO SECTION
+         ==================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-image-wrap">
+        <img src="../assets/band_hero_real.jpg" alt="Tower Hill Band performing live on stage" class="hero-banner-img">
+        <div class="hero-gradient-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-tag">Brockton &amp; South Shore Massachusetts</span>
+        <h1 class="hero-title">Tower Hill</h1>
+        <p class="hero-subtitle">
+          A fun and dynamic pop and rock cover band playing your favorite danceable hits spanning the entire history of Rock &apos;n&apos; Roll!
+        </p>
+        <div class="hero-cta-group">
+          <a href="#shows" class="btn-primary">
+            <span>📅 See Upcoming Shows</span>
+          </a>
+          <a href="#music" class="btn-secondary">
+            <span>🎬 Watch &amp; Listen</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span>📞 Book Bob Fallon</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         NEXT GIG ALERT RIBBON (Auto-populated from th.2.web@gmail.com)
+         ==================================================================== -->
+    <aside class="next-gig-ribbon" aria-label="Next Upcoming Performance">
+      <div class="ribbon-info">
+        <span class="ribbon-badge">NEXT SHOW</span>
+        <div class="ribbon-details">
+          <h2 id="ribbonNextShowDate">Loading next show...</h2>
+          <p id="ribbonNextShowVenue">South Shore &amp; Metro Boston</p>
+        </div>
+      </div>
+      <div class="ribbon-actions">
+        <a href="#shows" id="ribbonDirectionsBtn" target="_blank" rel="noopener noreferrer" class="btn-compact btn-secondary">
+          <span>📍 Directions</span>
+        </a>
+        <button type="button" id="ribbonAddCalBtn" class="btn-compact btn-primary">
+          <span>📅 Add to Phone</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         SECTION 1: UPCOMING SHOWS (Clean Event Cards + Google Calendar Option)
+         ==================================================================== -->
+    <section class="content-section" id="shows">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Where To Catch Us Live</span>
+          <h2 class="section-title">Show Schedule</h2>
+          <p class="section-desc">
+            Synced directly from our official tour calendar. Tap <strong>Directions</strong> for Google Maps or <strong>Add to Phone</strong> to save the show to your phone&apos;s calendar.
+          </p>
+        </div>
+
+        <div class="event-filter-bar" role="tablist" aria-label="Schedule Display Options">
+          <button type="button" class="event-filter-btn active" data-filter="upcoming">🔥 Upcoming Shows</button>
+          <button type="button" class="event-filter-btn" data-filter="all">📅 All 2026–2027 Dates</button>
+          <button type="button" class="event-filter-btn" data-filter="calendar">🗓️ Monthly Google Calendar</button>
+        </div>
+
+        <div class="events-list-container" id="eventsList">
+          <!-- Populated cleanly from demov1/data/shows.json -->
+        </div>
+
+        <div class="google-calendar-wrap" id="googleCalendarWrap">
+          <iframe
+            id="googleCalendarIframe"
+            class="google-calendar-iframe"
+            title="Tower Hill Official Google Calendar"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="calendar-subscribe-footer">
+          <span>📅 Official Google Calendar: <strong>th.2.web@gmail.com</strong></span>
+          <a href="https://calendar.google.com/calendar/u/0?cid=dGguMi53ZWJAZ21haWwuY29t" target="_blank" rel="noopener noreferrer" class="footer-link" style="color: var(--accent-color); font-weight: 800;">
+            + Subscribe in Google Calendar →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: WATCH & LISTEN (Real YouTube Live Video + SoundCloud)
+         ==================================================================== -->
+    <section class="content-section" id="music">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Watch &amp; Listen Before You Go</span>
+          <h2 class="section-title">Live Video &amp; Audio</h2>
+          <p class="section-desc">
+            Check out Tower Hill performing live on stage and stream our recordings on SoundCloud. From classic rock anthems to modern party hits!
+          </p>
+        </div>
+
+        <div class="media-showcase-grid">
+          <!-- Authentic YouTube Live Video -->
+          <article class="media-card">
+            <div class="media-card-header">
+              <h3>🎬 Summer Concert Series Live</h3>
+              <span class="media-badge">YouTube Live</span>
+            </div>
+            <div class="video-responsive-16x9">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/_Lx13c5SbPA"
+                title="Summer Concert Series - Tower Hill Live"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--theme-text-muted);">
+              Recorded live during the Summer Concert Series (Brockton Channels). More live show clips coming soon!
+            </p>
+            <a href="https://www.youtube.com/watch?v=_Lx13c5SbPA" target="_blank" rel="noopener noreferrer" class="btn-compact btn-secondary" style="align-self: flex-start;">
+              ▶ Watch on YouTube
+            </a>
+          </article>
+
+          <!-- Official SoundCloud Player -->
+          <article class="media-card">
+            <div class="media-card-header">
+              <h3>🔊 Tower Hill on SoundCloud</h3>
+              <span class="media-badge">Audio Stream</span>
+            </div>
+            <iframe
+              class="soundcloud-frame"
+              title="Tower Hill SoundCloud Player"
+              scrolling="no"
+              allow="autoplay"
+              loading="lazy"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tower-hill&color=%23e63946&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+            <p style="font-size: 0.9rem; color: var(--theme-text-muted);">
+              Hear how Tower Hill brings powerhouse vocals, guitars, bass, and drums to every venue.
+            </p>
+            <a href="https://soundcloud.com/tower-hill" target="_blank" rel="noopener noreferrer" class="btn-compact btn-secondary" style="align-self: flex-start;">
+              ☁️ Open SoundCloud Profile
+            </a>
+          </article>
+        </div>
+
+        <div class="repertoire-pills">
+          <div class="repertoire-label">Crowd-Favorite Artists We Cover</div>
+          <div class="song-tags-wrap">
+            <span class="song-tag">Journey</span>
+            <span class="song-tag">Bon Jovi</span>
+            <span class="song-tag">Guns N&apos; Roses</span>
+            <span class="song-tag">Heart</span>
+            <span class="song-tag">Pat Benatar</span>
+            <span class="song-tag">Aerosmith</span>
+            <span class="song-tag">Elvis Presley</span>
+            <span class="song-tag">Katy Perry</span>
+            <span class="song-tag">Adele</span>
+            <span class="song-tag">Van Morrison</span>
+            <span class="song-tag">AC/DC</span>
+            <span class="song-tag">No Doubt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: MEET THE BAND (Verified Member Bios + Real Photos)
+         ==================================================================== -->
+    <section class="content-section" id="band">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle-tag">South Shore Favorites</span>
+          <h2 class="section-title">Meet Tower Hill</h2>
+          <p class="section-desc">
+            &ldquo;Bring your dancing shoes, your drinking hat, and an extra pair of socks, because Tower Hill will rock you out of yours!&rdquo;
+          </p>
+        </div>
+
+        <div class="band-feature-photos">
+          <figure class="band-group-feature">
+            <img src="../assets/band_info_real.jpg" alt="Tower Hill band lineup on stage" class="band-group-img">
+            <figcaption class="band-group-caption">
+              🎸 Tower Hill: Caroline Driscoll, Bob Fallon, Jay Driscoll &amp; Stormy Thorson
+            </figcaption>
+          </figure>
+          <figure class="band-group-feature">
+            <img src="../assets/fb_photo_1.jpg" alt="Tower Hill black and white band collage with skyline logo" class="band-group-img" style="object-position: center top;">
+            <figcaption class="band-group-caption">
+              🖤 Classic Black &amp; White Live Lineup &amp; Official Skyline Crest
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="band-roster-grid">
+          <article class="member-card">
+            <div class="member-portrait-wrap">
+              <img src="../assets/headshot_caroline.jpg" alt="Caroline Driscoll Lead Vocals" class="member-portrait-img">
+            </div>
+            <div class="member-body">
+              <span class="member-instrument-badge">Lead Vocals &amp; Frontwoman</span>
+              <h3 class="member-name">Caroline Driscoll</h3>
+              <p class="member-bio">
+                A vivacious and powerful frontwoman, Caroline can be found singing her heart out from table tops, chairs, and the tops of bars most nights. In your face and interacting with the crowd, this quick witted dynamo keeps you dancing, singing, and laughing all night long.
+              </p>
+            </div>
+          </article>
+
+          <article class="member-card bob-highlight">
+            <div class="member-portrait-wrap">
+              <img src="../assets/headshot_bob.jpg" alt="Bob Fallon Bass and Booking" class="member-portrait-img">
+            </div>
+            <div class="member-body">
+              <span class="member-instrument-badge" style="background: #2563eb;">Bass &amp; Booking Coordinator</span>
+              <h3 class="member-name">Bob Fallon</h3>
+              <p class="member-bio">
+                A staple of the south shore, bassist Bob Fallon is a natural performer and keeps the energy high all night. His passion and love of rock and roll literally drips from his luscious locks. Bob also handles booking and band coordination.
+              </p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-portrait-wrap">
+              <img src="../assets/headshot_jay.jpg" alt="Jay Driscoll Lead Guitar" class="member-portrait-img">
+            </div>
+            <div class="member-body">
+              <span class="member-instrument-badge">Lead Guitar</span>
+              <h3 class="member-name">Jay Driscoll</h3>
+              <p class="member-bio">
+                This virtuoso guitarist brings the rock each and every night. His blistering solos and matinee idol good looks melt faces, and hearts.
+              </p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="member-portrait-wrap">
+              <img src="../assets/headshot_stormy.jpg" alt="Stormy Thorson Drums" class="member-portrait-img">
+            </div>
+            <div class="member-body">
+              <span class="member-instrument-badge">Drums &amp; Percussion</span>
+              <h3 class="member-name">Stormy Thorson</h3>
+              <p class="member-bio">
+                Drummer Stormy Thorson combines performance and musicianship in every beat. A long time fixture on the local music scene, he is a charming and delightful character.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: SOCIAL HUB & LIVE PHOTO GALLERY
+         ==================================================================== -->
+    <section class="content-section" id="social">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Stay Connected</span>
+          <h2 class="section-title">Follow Tower Hill</h2>
+          <p class="section-desc">
+            Follow us for weekend show reminders, live clips, and photos from South Shore pubs and outdoor festivals!
+          </p>
+        </div>
+
+        <div class="social-platforms-row">
+          <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener noreferrer" class="social-button btn-facebook">
+            <span>📘 Facebook</span>
+          </a>
+          <a href="https://www.youtube.com/watch?v=_Lx13c5SbPA" target="_blank" rel="noopener noreferrer" class="social-button btn-youtube">
+            <span>▶ YouTube</span>
+          </a>
+          <a href="https://soundcloud.com/tower-hill" target="_blank" rel="noopener noreferrer" class="social-button btn-soundcloud">
+            <span>☁️ SoundCloud</span>
+          </a>
+          <a href="https://x.com/towerhillrocks" target="_blank" rel="noopener noreferrer" class="social-button btn-x">
+            <span>𝕏 @towerhillrocks</span>
+          </a>
+          <a href="https://towerhillrocks.tumblr.com/" target="_blank" rel="noopener noreferrer" class="social-button btn-tumblr">
+            <span>📝 Tumblr</span>
+          </a>
+        </div>
+
+        <div class="social-embeds-grid">
+          <article class="embed-post-card">
+            <div class="embed-post-header">
+              <span aria-hidden="true" style="font-size: 1.35rem;">📘</span>
+              <div class="embed-post-author">
+                <h4>Tower Hill on Facebook</h4>
+                <span>Outdoor Summer Stage • Jay on Lead Guitar</span>
+              </div>
+            </div>
+            <div class="embed-post-content">
+              <p>
+                Nothing beats an outdoor summer show on the South Shore! Come hang out with us at our next pub night or weekend festival. 🎸☀️
+              </p>
+            </div>
+            <img src="../assets/fb_photo_2.jpg" alt="Jay Driscoll playing white Stratocaster live outdoors" class="embed-post-media">
+            <div class="embed-post-footer">
+              <span>facebook.com/TowerHillMusic</span>
+              <a href="https://www.facebook.com/TowerHillMusic" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700; text-decoration: none;">Follow on Facebook →</a>
+            </div>
+          </article>
+
+          <article class="embed-post-card">
+            <div class="embed-post-header">
+              <span aria-hidden="true" style="font-size: 1.35rem;">🥁</span>
+              <div class="embed-post-author">
+                <h4>Behind the Kit with Stormy</h4>
+                <span>Tavern Rock Nights • Brockton &amp; South Shore</span>
+              </div>
+            </div>
+            <div class="embed-post-content">
+              <p>
+                Keeping the beat tight all night long at our favorite South Shore taverns. Tag us in your photos when you come see the show! 🍺🔥
+              </p>
+            </div>
+            <img src="../assets/fb_photo_3.jpg" alt="Stormy Thorson playing drums on stage" class="embed-post-media">
+            <div class="embed-post-footer">
+              <span>x.com/towerhillrocks</span>
+              <a href="https://x.com/towerhillrocks" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-weight: 700; text-decoration: none;">Follow @towerhillrocks →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-header" style="margin-top: 2.5rem; margin-bottom: 1.25rem;" id="gallery">
+          <h3 style="font-size: 1.4rem; color: #ffffff;">Live Show Photo Gallery</h3>
+          <p style="color: var(--theme-text-muted); font-size: 0.92rem;">Tap any photo to zoom in full screen.</p>
+        </div>
+
+        <div class="photo-gallery-grid">
+          <div class="gallery-thumbnail"><img src="../assets/fb_photo_2.jpg" alt="Tower Hill Outdoor Live Guitar Solo"></div>
+          <div class="gallery-thumbnail"><img src="../assets/fb_photo_3.jpg" alt="Stormy Thorson Live Behind the Drums"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_1.jpg" alt="Tower Hill Live Stage &amp; Crowd"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_2.jpg" alt="Tower Hill Pub Show Performance"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_3.jpg" alt="Caroline &amp; Band Live in Action"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_4.jpg" alt="South Shore Rock Crowd"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_5.jpg" alt="Tower Hill Full Stage Lights"></div>
+          <div class="gallery-thumbnail"><img src="../assets/gallery_6.jpg" alt="Live Band Candid Shot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: CONTACT & BOOKING (Cloudflare-Style Anti-Bot Protected)
+         ==================================================================== -->
+    <section class="content-section" id="contact">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Book Tower Hill</span>
+          <h2 class="section-title">Contact &amp; Booking</h2>
+          <p class="section-desc">
+            Available for South Shore &amp; Greater Boston bars, clubs, private functions, weddings, town festivals, and backyard parties.
+          </p>
+        </div>
+
+        <div class="booking-section-wrap">
+          <div class="bob-contact-card">
+            <div class="bob-card-left">
+              <img src="../assets/headshot_bob.jpg" alt="Bob Fallon Booking Coordinator" class="bob-avatar-photo">
+              <div class="bob-details">
+                <h3>Bob Fallon</h3>
+                <p class="bob-role">Booking Coordinator &amp; Bassist</p>
+                <p class="bob-quote">
+                  &ldquo;Call or text me anytime! We bring full sound and tailor the setlist for your crowd.&rdquo;
+                </p>
+                <div class="bot-shield-badge">
+                  <span>🛡️ Bot-Protected Contact • Safe for Humans</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bob-direct-actions">
+              <a href="#contact" data-cf-tel="5a6f6a6269686c6e6e6c6a" class="btn-bob-call">
+                <span>📞 Call: <span data-cf-phone="5a726f6a62737a69686c776e6e6c6a">Enable JS</span></span>
+              </a>
+              <a href="#contact" data-cf-sms="5a6f6a6269686c6e6e6c6a" class="btn-bob-sms">
+                <span>💬 Text Bob</span>
+              </a>
+              <a href="#contact" data-cf-email="5a2e352d3f283233363628353931291a3d373b333674393537" class="btn-bob-email">
+                <span>✉️ Email Bob</span>
+              </a>
+            </div>
+            <noscript>
+              <p style="width: 100%; text-align: center; color: #fde68a; font-size: 0.9rem;">
+                Please enable JavaScript to reveal Bob Fallon&apos;s protected phone number and booking email address.
+              </p>
+            </noscript>
+          </div>
+
+          <div class="booking-form-box">
+            <h3 class="booking-form-title">Send a Fast Booking Inquiry</h3>
+            <p class="booking-form-sub">Opens a pre-filled email directly to Bob Fallon.</p>
+
+            <form id="quickBookingForm">
+              <div class="simple-form-grid">
+                <div class="form-field">
+                  <label for="clientName">Your Name *</label>
+                  <input type="text" id="clientName" class="form-input" placeholder="e.g. Mike Sullivan" required>
+                </div>
+                <div class="form-field">
+                  <label for="clientContact">Phone or Email *</label>
+                  <input type="text" id="clientContact" class="form-input" placeholder="e.g. 508-555-0199" required>
+                </div>
+                <div class="form-field">
+                  <label for="eventDate">Target Date</label>
+                  <input type="date" id="eventDate" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-field" style="margin-top: 0.9rem;">
+                <label for="eventDetails">Venue / Event Details</label>
+                <input type="text" id="eventDetails" class="form-input" placeholder="e.g. Pub night in Brockton, or Wedding reception in Quincy">
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn-primary">
+                  <span>✉️ Compose Email to Bob</span>
+                </button>
+              </div>
+
+              <div class="form-success-alert" id="bookingSuccessAlert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: MAILCHIMP VIP FAN CLUB / GIG ALERTS
+         ==================================================================== -->
+    <section class="content-section" id="newsletter">
+      <div class="section-inner">
+        <div class="newsletter-card">
+          <div class="newsletter-icon">📬</div>
+          <h2 class="newsletter-title">Join the Tower Hill VIP Mailing List</h2>
+          <p class="newsletter-sub">
+            Get one-click gig alerts when we book new pubs, outdoor concerts, and New Year&apos;s Eve parties. Powered by Mailchimp — zero spam ever!
+          </p>
+
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <input
+              type="email"
+              name="EMAIL"
+              id="mce-EMAIL"
+              class="newsletter-input"
+              placeholder="Enter your email address..."
+              required
+              aria-label="Email address for Mailchimp gig alerts">
+            <button type="submit" class="btn-primary">
+              <span>Join Fan Club</span>
+            </button>
+          </form>
+
+          <div class="newsletter-feedback" id="newsletterFeedback"></div>
+          <p class="mailchimp-note">
+            Mailchimp Ready • Unsubscribe anytime with 1 click.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="band-site-footer">
+    <img src="../assets/logo_bw_skyline.jpg" alt="Tower Hill Band Logo" class="footer-logo">
+    <p class="footer-text">
+      Tower Hill • Brockton, South Shore &amp; Greater Boston, Massachusetts
+    </p>
+    <p class="footer-text">
+      Booking &amp; Info: Bob Fallon •
+      <a href="#contact" data-cf-tel="5a6f6a6269686c6e6e6c6a" style="color: #93c5fd;">
+        <span data-cf-phone="5a726f6a62737a69686c776e6e6c6a">Call Bob</span>
+      </a> •
+      <a href="#contact" data-cf-email="5a2e352d3f283233363628353931291a3d373b333674393537" data-cf-show-text style="color: #93c5fd;">
+        Email Bob
+      </a>
+    </p>
+    <div class="footer-links">
+      <a href="#home" class="footer-link">Top</a>
+      <a href="#shows" class="footer-link">Shows</a>
+      <a href="#music" class="footer-link">Video &amp; Audio</a>
+      <a href="#band" class="footer-link">The Band</a>
+      <a href="https://www.towerhillrocks.com/" target="_blank" rel="noopener noreferrer" class="footer-link">towerhillrocks.com</a>
+      <a href="../index.html" class="footer-link">← Design Prototypes</a>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MOBILE STICKY BOTTOM ACTION BAR (iPhone / Pixel / Samsung)
+       ====================================================================== -->
+  <div class="mobile-sticky-bottom-bar" id="mobileStickyBar">
+    <div class="bottom-actions-row">
+      <a href="#contact" data-cf-tel="5a6f6a6269686c6e6e6c6a" class="bottom-action-btn bottom-call-btn">
+        <span>📞 Call</span>
+      </a>
+      <a href="#contact" data-cf-sms="5a6f6a6269686c6e6e6c6a" class="bottom-action-btn bottom-sms-btn">
+        <span>💬 Text</span>
+      </a>
+      <a href="#shows" class="bottom-action-btn bottom-shows-btn">
+        <span>📅 Shows</span>
+      </a>
+      <a href="#music" class="bottom-action-btn bottom-listen-btn">
+        <span>🎵 Listen</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Fullscreen Gallery Lightbox -->
+  <div id="galleryLightbox" class="gallery-lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Enlarged Photo">
+    <div class="gallery-lightbox-content">
+      <button type="button" id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close photo">✕</button>
+      <img src="" alt="Enlarged Tower Hill Photo" id="lightboxImg" class="lightbox-img">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
+

@@ -10,7 +10,7 @@
   --theme-text: #f1f5f9;
   --theme-text-muted: #94a3b8;
   
-  --nav-bg: rgba(11, 13, 17, 0.96);
+  --nav-bg: #0b0d11;
   --nav-border: #232836;
   
   --accent-color: #e63946;
@@ -129,7 +129,7 @@
   --theme-text: #f0f6fc;
   --theme-text-muted: #8b949e;
   
-  --nav-bg: rgba(13, 17, 23, 0.98);
+  --nav-bg: #0d1117;
   --nav-border: #30363d;
   
   --accent-color: #38bdf8; /* Electric concert cyan */

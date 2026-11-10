@@ -9,7 +9,8 @@ Official reference: `https://towerhillrocks.wixsite.com/tower-hill/info`
 
 ## 🌐 Live Hosted Demo (GitHub Pages)
 
-👉 **[https://reiuiji.github.io/towerhill_demo/](https://reiuiji.github.io/towerhill_demo/)**
+- 🚀 **[Version 1 Real Site Demo (`demov1`)](https://reiuiji.github.io/towerhill_demo/demov1/)** — Standalone production-ready candidate (Style A Midnight Stage Rock default + modular `themes.css`, live Google Calendar sync via `scripts/sync_calendar.py`, Cloudflare-style XOR contact bot protection, YouTube/SoundCloud embeds, Mailchimp-ready signup)
+- 🎯 **[Prototype Simulator & Comparison Tool](https://reiuiji.github.io/towerhill_demo/)**
 
 ### Direct Links for Testing on Phones:
 - 🎸 **[Style A: Midnight Stage Rock](https://reiuiji.github.io/towerhill_demo/prototype-stage-rock.html)**

@@ -262,86 +262,100 @@ function initPrototypeControls() {
   const fontNormalBtn = document.getElementById('fontNormalBtn');
   const fontIncreaseBtn = document.getElementById('fontIncreaseBtn');
   
+  function updateFontButtons() {
+    if (fontDecreaseBtn) fontDecreaseBtn.classList.toggle('active', textScale < 0.99);
+    if (fontNormalBtn) fontNormalBtn.classList.toggle('active', Math.abs(textScale - 1) < 0.02);
+    if (fontIncreaseBtn) fontIncreaseBtn.classList.toggle('active', textScale > 1.01);
+  }
+
   function applyScale(scale) {
-    textScale = scale;
+    textScale = Math.round(scale * 100) / 100;
     document.documentElement.style.setProperty('--text-scale', textScale);
+    document.documentElement.style.fontSize = (16 * textScale) + 'px';
+    updateFontButtons();
   }
   
-  if (fontDecreaseBtn) fontDecreaseBtn.addEventListener('click', () => applyScale(Math.max(0.85, textScale - 0.1)));
+  updateFontButtons();
+  if (fontDecreaseBtn) fontDecreaseBtn.addEventListener('click', () => applyScale(Math.max(0.85, textScale - 0.15)));
   if (fontNormalBtn) fontNormalBtn.addEventListener('click', () => applyScale(1));
-  if (fontIncreaseBtn) fontIncreaseBtn.addEventListener('click', () => applyScale(Math.min(1.35, textScale + 0.1)));
+  if (fontIncreaseBtn) fontIncreaseBtn.addEventListener('click', () => applyScale(Math.min(1.45, textScale + 0.15)));
 }
 
 /* ==========================================================================
    2. BAND TOP BAR & SLIDE-OVER DROPDOWN MENU
    ========================================================================== */
 function initBandNavigation() {
-  const menuBtn = document.getElementById('bandMenuToggleBtn');
-  const menuOverlay = document.getElementById('dropdownMenuOverlay');
-  const closeBtn = document.getElementById('menuCloseBtn');
-  const scheduleBtn = document.getElementById('navScheduleBtn');
-  
-  function toggleMenu() {
-    const isOpen = menuOverlay.classList.contains('is-open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
+  const navBars = document.querySelectorAll('.band-nav-bar');
+  navBars.forEach(navBar => {
+    const menuBtn = navBar.querySelector('.nav-menu-btn');
+    const menuOverlay = navBar.querySelector('.dropdown-menu-overlay');
+    const closeBtn = navBar.querySelector('.overlay-close-btn');
+    const scheduleBtn = navBar.querySelector('.nav-schedule-btn');
+    const viewport = navBar.closest('.site-viewport') || document;
+
+    function openMenu() {
+      if (!menuOverlay || !menuBtn) return;
+      menuOverlay.classList.add('is-open');
+      menuBtn.classList.add('active');
+      menuBtn.setAttribute('aria-expanded', 'true');
     }
-  }
 
-  function openMenu() {
-    menuOverlay.classList.add('is-open');
-    menuBtn.classList.add('active');
-    menuBtn.setAttribute('aria-expanded', 'true');
-  }
+    function closeMenu() {
+      if (!menuOverlay || !menuBtn) return;
+      menuOverlay.classList.remove('is-open');
+      menuBtn.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
 
-  function closeMenu() {
-    menuOverlay.classList.remove('is-open');
-    menuBtn.classList.remove('active');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }
-
-  if (menuBtn) {
-    menuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMenu();
-});
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeMenu);
-  }
-
-  // Close when clicking any menu link
-  const menuLinks = document.querySelectorAll('.overlay-link-card, .quick-dial-btn');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu();
-});
-});
-
-  // Schedule Quick Button
-  if (scheduleBtn) {
-    scheduleBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMenu();
-      const showsSection = document.getElementById('shows');
-      if (showsSection) {
-        showsSection.scrollIntoView({ behavior: 'smooth'   
-});
-      }
-});
-  }
-
-  // Close when clicking outside on desktop
-  document.addEventListener('click', (e) => {
-    if (menuOverlay && menuOverlay.classList.contains('is-open')) {
-      if (!menuOverlay.contains(e.target) && !menuBtn.contains(e.target)) {
+    function toggleMenu() {
+      if (!menuOverlay) return;
+      if (menuOverlay.classList.contains('is-open')) {
         closeMenu();
+      } else {
+        openMenu();
       }
     }
-});
+
+    if (menuBtn) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
+
+    const menuLinks = navBar.querySelectorAll('.overlay-link-card, .quick-dial-btn');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    if (scheduleBtn) {
+      scheduleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+        const showsSection = viewport.querySelector('#shows') || document.getElementById('shows');
+        if (showsSection) {
+          showsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (menuOverlay && menuOverlay.classList.contains('is-open')) {
+        if (!menuOverlay.contains(e.target) && (!menuBtn || !menuBtn.contains(e.target))) {
+          closeMenu();
+        }
+      }
+    });
+  });
 }
 
 /* ==========================================================================
